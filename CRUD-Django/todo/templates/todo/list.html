@@ -21,6 +21,7 @@
             <th scope="col">#</th>
             <th scope="col">Content</th>
             <th scope="col">Title</th>
+            <th scope="col">Description</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -30,6 +31,7 @@
             <th scope="row">{{ list.id }}</th>
             <td>{{ list.content }}</td>
             <td>{{ list.title }}</td>
+            <td>{{ list.description }}</td>
 
             <td>
               <a class="btn btn-info" href="{% url 'edittodo' list.id %}"

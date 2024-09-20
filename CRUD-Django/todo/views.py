@@ -18,9 +18,6 @@ def index(request):
 
 def saveAction(request):
     todoform = TodoForm(request.POST or None)
-    print(todoform)
-    pdb.set_trace()
-    raise SystemExit
     if todoform.is_valid():
         todoform.save()
 
@@ -33,7 +30,6 @@ def editTodo(request, pk):
     pickTodo = Todo.objects.get(pk=pk)
 
     editForm = TodoForm(request.POST or None, instance=pickTodo)
-
     if editForm.is_valid():
         editForm.save()
         return redirect('/')

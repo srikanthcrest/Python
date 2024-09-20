@@ -8,6 +8,7 @@ class Todo(models.Model):
 
     content = models.CharField(max_length=50)
     title = models.TextField()
+    description = models.TextField(blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
