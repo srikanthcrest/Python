@@ -4,6 +4,7 @@ from .forms import TodoForm
 from .models import Todo
 from django.utils import timezone
 import pdb
+import MySQLdb 
 
 
 # Create your views here.
