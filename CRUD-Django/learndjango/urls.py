@@ -30,8 +30,9 @@ urlpatterns = [
     # path('school/', include('school.urls')),
     # path('task_app/', include('task_app.urls')),
     #path('book/', include('book.urls')),
-    path('todo', include('todo.urls')),
+    # path('', include('todo.urls')),
     path('auth/', include('admin_user_api.urls')),
+    path('todo', include('todos.urls')),
     # path('', include(router.urls)),
 ]
 

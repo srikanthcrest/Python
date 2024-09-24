@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todo',
+    'admin_user_api',
+    'todos',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'learndjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'python_admin_user',
+        'NAME': 'python_user_permission',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',  # Or your MySQL host
