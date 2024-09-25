@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'admin_user_api.CustomUser'
 
 # Application definition
 
@@ -69,6 +70,17 @@ TEMPLATES = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication' 
+    ],
+}
+
 WSGI_APPLICATION = 'learndjango.wsgi.application'
 
 
@@ -95,7 +107,6 @@ DATABASES = {
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

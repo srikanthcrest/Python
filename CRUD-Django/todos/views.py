@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .models import ToDo
 from .forms import ToDoForm
 from rest_framework.permissions import IsAuthenticated
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+from rest_framework.views import APIView
 
 # Create your views here.
  
@@ -74,3 +77,14 @@ def deleteAction(request, pk):
     pickTodo.delete()
 
     return redirect('/')
+
+
+class TodoCreate(APIView):
+    permission_classes = [IsAuthenticated]
+
+    @csrf_exempt
+    def post(self, request, *args, **kwargs):
+        # Handle the POST request
+        print(request.data)  # Use request.data for DRF
+
+        return HttpResponse("Your response1")
